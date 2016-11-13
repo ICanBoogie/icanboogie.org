@@ -1,0 +1,40 @@
+<?php
+
+namespace ICanBoogie;
+
+/**
+ * @var $view \ICanBoogie\View\View
+ * @var $content string
+ * @var $page_title string
+ */
+
+?><!DOCTYPE html>
+<html lang="en">
+<?= $view->partial('head') ?>
+<body class="is-home">
+
+<section class="hero-title">
+	<div class="content">
+		<h1><img src="/assets/icanboogie.svg" alt="ICanBoogie" /></h1>
+
+		<ul class="links">
+			<li><a href="/docs/4.0/icanboogie">Introduction</a></li>
+			<li><a href="<?= app()->url_for('docs:index') ?>">Getting started</a></li>
+			<li><a href="https://github.com/icanboogie/">GitHub</a></li>
+			<li><a href="#">News</a></li>
+		</ul>
+
+		<p>A high-performance PHP micro-framework</p>
+	</div>
+</section>
+
+<!--section class="page-inner">
+	<article>
+		<?= $content ?>
+	</article>
+</section-->
+
+<?= $view->partial('footer') ?>
+
+</body>
+</html>

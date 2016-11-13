@@ -1,0 +1,21 @@
+<?php
+
+namespace ICanBoogie;
+
+/**
+ * @var $view \ICanBoogie\View\View
+ * @var $content string
+ * @var $page_title string
+ */
+
+?><!DOCTYPE html>
+<html lang="en">
+<?= $view->partial('head') ?>
+<body>
+
+<?= $view->partial('navigation') ?>
+<?= $content ?>
+<?= $view->partial('footer') ?>
+
+</body>
+</html>
