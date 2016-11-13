@@ -5,6 +5,7 @@ namespace ICanBoogie;
 /**
  * @var $content string
  * @var $sidebar string
+ * @var $edit_link string
  */
 
 ?>
@@ -18,5 +19,9 @@ namespace ICanBoogie;
 		<article>
 			<?= $content ?>
 		</article>
+
+		<footer class="article-actions">
+			<a class="action-edit" href="<?= escape($edit_link) ?>">Edit this page</a>
+		</footer>
 	</section>
 </div>

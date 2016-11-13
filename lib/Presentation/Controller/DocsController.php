@@ -18,12 +18,15 @@ use ICanBoogie\Routing\Controller;
 use ICanBoogie\View\ControllerBindings as ViewBindings;
 
 use const ICanBoogie\APP_DIR;
+use function ICanBoogie\format;
 
 class DocsController extends Controller
 {
 	use Controller\ActionTrait;
 	use ViewBindings;
 	use AppAccessor;
+
+	const EDIT_LINK_TEMPLATE = 'https://github.com/ICanBoogie/docs/blob/{version}/{slug}.md';
 
 	/**
 	 * @return \ICanBoogie\HTTP\RedirectResponse
@@ -50,7 +53,13 @@ class DocsController extends Controller
 		$this->response->cache_control = 'public';
 		$this->response->expires = '+1 days';
 		$this->view->content = $this->render_document($version, $slug);
-		$this->view['sidebar'] = $this->render_navigation($version);
+		$this->view->assign([
+
+			'sidebar' => $this->render_navigation($version),
+			'edit_link' => $this->render_edit_link($version, $slug)
+
+		]);
+
 		$this->view->template = 'doc';
 	}
 
@@ -92,9 +101,22 @@ class DocsController extends Controller
 
 	/**
 	 * @param string $filename
+	 *
+	 * @return string
 	 */
 	private function render_template($filename)
 	{
 		return $this->app->template_engines->render($filename, null, []);
+	}
+
+	/**
+	 * @param string $version
+	 * @param string $slug
+	 *
+	 * @return string
+	 */
+	private function render_edit_link($version, $slug)
+	{
+		return format(self::EDIT_LINK_TEMPLATE, compact('version', 'slug'));
 	}
 }
