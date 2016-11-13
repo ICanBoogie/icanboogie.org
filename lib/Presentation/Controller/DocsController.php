@@ -80,7 +80,11 @@ class DocsController extends Controller
 			throw new DocumentNotFound($version, $name);
 		}
 
-		return $this->render_template($filename);
+		$html = $this->render_template($filename);
+		// adjust relative links
+		$html = preg_replace('#"\./([^\.]+)\.md"#', '"./$1"', $html);
+
+		return $html;
 	}
 
 	/**
