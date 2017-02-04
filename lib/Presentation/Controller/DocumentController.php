@@ -20,7 +20,7 @@ use ICanBoogie\View\ControllerBindings as ViewBindings;
 use const ICanBoogie\APP_ROOT;
 use function ICanBoogie\format;
 
-class DocsController extends Controller
+class DocumentController extends Controller
 {
 	use Controller\ActionTrait;
 	use ViewBindings;

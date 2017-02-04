@@ -26,7 +26,7 @@ return [
 	'docs:index' => [
 
 		Route::PATTERN => '/docs',
-		Route::CONTROLLER => Controller\DocsController::class,
+		Route::CONTROLLER => Controller\DocumentController::class,
 		Route::ACTION => 'index'
 
 	],
@@ -34,7 +34,7 @@ return [
 	'docs:version:index' => [
 
 		Route::PATTERN => '/docs/<version:\d\.\d>',
-		Route::CONTROLLER => Controller\DocsController::class,
+		Route::CONTROLLER => Controller\DocumentController::class,
 		Route::ACTION => 'version_index'
 
 	],
@@ -42,7 +42,7 @@ return [
 	'docs:show' => [
 
 		Route::PATTERN => '/docs/<version:\d\.\d>/:slug',
-		Route::CONTROLLER => Controller\DocsController::class,
+		Route::CONTROLLER => Controller\DocumentController::class,
 		Route::ACTION => 'show'
 
 	]
