@@ -11,6 +11,8 @@
 
 namespace ICanBoogie;
 
+chdir(dirname(__DIR__));
+
 /*
  * URL rewriting functionality for the built-in PHP web server.
  */
