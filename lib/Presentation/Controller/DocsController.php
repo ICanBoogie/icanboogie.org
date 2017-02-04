@@ -17,7 +17,7 @@ use ICanBoogie\HTTP\NotFound;
 use ICanBoogie\Routing\Controller;
 use ICanBoogie\View\ControllerBindings as ViewBindings;
 
-use const ICanBoogie\APP_DIR;
+use const ICanBoogie\APP_ROOT;
 use function ICanBoogie\format;
 
 class DocsController extends Controller
@@ -73,7 +73,7 @@ class DocsController extends Controller
 	 */
 	private function render_document($version, $name)
 	{
-		$filename = APP_DIR . "/all/content/docs/$version/$name.md";
+		$filename = APP_ROOT . "_content/docs/$version/$name.md";
 
 		if (!file_exists($filename))
 		{
@@ -94,7 +94,7 @@ class DocsController extends Controller
 	 */
 	private function render_navigation($version)
 	{
-		$filename = APP_DIR . "/all/content/docs/$version/README.md";
+		$filename = APP_ROOT . "_content/docs/$version/README.md";
 		$html = $this->render_template($filename);
 
 		$html = preg_replace('#href="(?!/)#', 'href="/docs/' . $version . '/', $html);

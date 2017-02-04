@@ -15,6 +15,8 @@ use ICanBoogie\Application;
 use ICanBoogie\OffsetNotWritable;
 use ICanBoogie\Render\EngineCollection;
 
+use const ICanBoogie\APP_ROOT;
+
 class ContentCollection implements \ArrayAccess
 {
 	/**
@@ -34,7 +36,7 @@ class ContentCollection implements \ArrayAccess
 	 */
 	static public function for_app(Application $app)
 	{
-		return new static($app->template_engines, $app->config['app-root'] . '/all/content/');
+		return new static($app->template_engines, APP_ROOT . '_content/');
 	}
 
 	/**
