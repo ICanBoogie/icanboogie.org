@@ -146,6 +146,13 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 
 				var html = xhr.responseText
+				var title = html.match(/<title>([\s\S]*?)<\/title>/i)[1];
+
+				if (title)
+				{
+					document.head.querySelector('title').innerHTML = title
+				}
+
 				var match = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
 				if (match) html = match[1];
 				var temp = document.createElement('div')

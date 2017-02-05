@@ -50,13 +50,16 @@ class DocumentController extends Controller
 	 */
 	protected function action_get_show($version, $slug)
 	{
+		$html = $this->render_document($version, $slug);
+
 		$this->response->cache_control = 'public';
 		$this->response->expires = '+1 days';
-		$this->view->content = $this->render_document($version, $slug);
+		$this->view->content = $html;
 		$this->view->assign([
 
 			'sidebar' => $this->render_navigation($version),
-			'edit_link' => $this->render_edit_link($version, $slug)
+			'edit_link' => $this->render_edit_link($version, $slug),
+			'page_title' => $this->resolve_page_title($html)
 
 		]);
 
@@ -122,5 +125,20 @@ class DocumentController extends Controller
 	private function render_edit_link($version, $slug)
 	{
 		return format(self::EDIT_LINK_TEMPLATE, compact('version', 'slug'));
+	}
+
+	/**
+	 * @param string $html
+	 *
+	 * @return string|null
+	 */
+	private function resolve_page_title($html)
+	{
+		if (!preg_match('#<h1[^>]+>(.+)</h1>#', $html, $matches))
+		{
+			return null;
+		}
+
+		return strip_tags($matches[1]);
 	}
 }
