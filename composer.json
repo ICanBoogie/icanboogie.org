@@ -1,22 +1,21 @@
 {
-	"name": "icanboogie/app-hello",
 	"type": "project",
-	"description": "Starter project for your application built with ICanBoogie",
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Olivier Laviale",
 			"email": "olivier.laviale@gmail.com",
-			"homepage": "http://www.weirdog.com/",
+			"homepage": "https://olvlvl.com",
 			"role" : "Developer"
 		}
 	],
 	"support": {
-		"issues": "https://github.com/ICanBoogie/app-hello/issues",
-		"source": "https://github.com/ICanBoogie/app-hello"
+		"issues": "https://github.com/ICanBoogie/icanboogie.org/issues",
+		"source": "https://github.com/ICanBoogie/icanboogie.org"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
+	"prefer-dist": true,
 	"require": {
 		"php": ">=5.6.4",
 		"icanboogie/icanboogie": "^4.0",
