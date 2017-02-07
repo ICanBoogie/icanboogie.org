@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Application\Exception;
+namespace App\Domain\Document;
 
 use ICanBoogie\Accessor\AccessorTrait;
 use ICanBoogie\HTTP\NotFound;

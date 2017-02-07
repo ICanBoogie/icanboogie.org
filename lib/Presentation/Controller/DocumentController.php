@@ -11,7 +11,7 @@
 
 namespace App\Presentation\Controller;
 
-use App\Application\Exception\DocumentNotFound;
+use App\Domain\Document\DocumentNotFound;
 use ICanBoogie\AppAccessor;
 use ICanBoogie\HTTP\NotFound;
 use ICanBoogie\Routing\Controller;
