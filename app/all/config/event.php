@@ -2,12 +2,11 @@
 
 namespace App;
 
-use ICanBoogie;
-
 $hooks = Hooks::class . '::';
 
 return [
 
-	ICanBoogie\Render\EngineCollection::class . '::alter' => $hooks . 'on_alter_engine_collection'
+	'ICanBoogie\Routing\RouteDispatcher::dispatch' => $hooks . 'on_dispatch_routing_dispatcher',
+	'ICanBoogie\Render\EngineCollection::alter' => $hooks . 'on_alter_engine_collection',
 
 ];
