@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "244a074ae7766a98f5a164446735bcda",
+    "content-hash": "9878993ddb2967a5f5fe6ba41474ca6f",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -196,6 +196,59 @@
             "time": "2016-11-12 22:58:02"
         },
         {
+            "name": "icanboogie/bind-message-bus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ICanBoogie/bind-message-bus.git",
+                "reference": "6559153bd1d0105a6a59ef58051ac3ab816e8a13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/bind-message-bus/zipball/6559153bd1d0105a6a59ef58051ac3ab816e8a13",
+                "reference": "6559153bd1d0105a6a59ef58051ac3ab816e8a13",
+                "shasum": ""
+            },
+            "require": {
+                "icanboogie/icanboogie": "^4.0",
+                "icanboogie/message-bus": "dev-master",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "extra": {
+                "icanboogie": {
+                    "config-path": "config",
+                    "config-constructor": {
+                        "message-bus-handlers": "ICanBoogie\\Binding\\MessageBus\\Hooks::synthesize_handlers_config#message-bus"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ICanBoogie\\Binding\\MessageBus\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "https://olvlvl.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Binds icanboogie/message-bus to ICanBoogie",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "bus",
+                "message"
+            ],
+            "time": "2017-02-07 23:10:08"
+        },
+        {
             "name": "icanboogie/bind-prototype",
             "version": "3.0.x-dev",
             "source": {
@@ -348,6 +401,62 @@
                 "routing"
             ],
             "time": "2016-11-12 19:15:09"
+        },
+        {
+            "name": "icanboogie/bind-symfony-dependency-injection",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ICanBoogie/bind-symfony-dependency-injection.git",
+                "reference": "0a977a7570cad0ec1d4e7d889892fdfb5be7bb83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/bind-symfony-dependency-injection/zipball/0a977a7570cad0ec1d4e7d889892fdfb5be7bb83",
+                "reference": "0a977a7570cad0ec1d4e7d889892fdfb5be7bb83",
+                "shasum": ""
+            },
+            "require": {
+                "icanboogie/icanboogie": "^4.0",
+                "icanboogie/service": "dev-master",
+                "php": ">=5.6",
+                "symfony/config": "^3.2",
+                "symfony/dependency-injection": "^3.2",
+                "symfony/yaml": "^3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "icanboogie": {
+                    "config-path": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ICanBoogie\\Binding\\SymfonyDependencyInjection\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "https://olvlvl.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Binds symfony/dependency-injection to ICanBoogie",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "dependency",
+                "injection"
+            ],
+            "time": "2017-02-04 15:43:01"
         },
         {
             "name": "icanboogie/bind-view",
@@ -650,12 +759,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/ICanBoogie.git",
-                "reference": "a814a9e1bb6e07402e63aca36768fc28afb38f0b"
+                "reference": "d8f5c30029b5b0bbddbc40908c0b20d059454c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/ICanBoogie/zipball/a814a9e1bb6e07402e63aca36768fc28afb38f0b",
-                "reference": "a814a9e1bb6e07402e63aca36768fc28afb38f0b",
+                "url": "https://api.github.com/repos/ICanBoogie/ICanBoogie/zipball/d8f5c30029b5b0bbddbc40908c0b20d059454c9c",
+                "reference": "d8f5c30029b5b0bbddbc40908c0b20d059454c9c",
                 "shasum": ""
             },
             "require": {
@@ -723,7 +832,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-02-04 12:21:20"
+            "time": "2017-02-05 10:34:05"
         },
         {
             "name": "icanboogie/inflector",
@@ -776,6 +885,58 @@
                 "underscore"
             ],
             "time": "2016-12-15T09:15:25+00:00"
+        },
+        {
+            "name": "icanboogie/message-bus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ICanBoogie/MessageBus.git",
+                "reference": "8e0addb508e6c6c38a69e5d69d26d252345aa36e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/MessageBus/zipball/8e0addb508e6c6c38a69e5d69d26d252345aa36e",
+                "reference": "8e0addb508e6c6c38a69e5d69d26d252345aa36e",
+                "shasum": ""
+            },
+            "require": {
+                "icanboogie/accessor": "^1.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "icanboogie": {
+                    "config-path": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ICanBoogie\\MessageBus\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "https://olvlvl.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A message bus to handle or push messages",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "bus",
+                "message"
+            ],
+            "time": "2017-02-07 19:49:19"
         },
         {
             "name": "icanboogie/prototype",
@@ -923,12 +1084,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/Routing.git",
-                "reference": "86f02a9deb62836439bc44df5d957bd89c19d951"
+                "reference": "66e55207307c0989837b06af4b792e07586d6e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/Routing/zipball/86f02a9deb62836439bc44df5d957bd89c19d951",
-                "reference": "86f02a9deb62836439bc44df5d957bd89c19d951",
+                "url": "https://api.github.com/repos/ICanBoogie/Routing/zipball/66e55207307c0989837b06af4b792e07586d6e8d",
+                "reference": "66e55207307c0989837b06af4b792e07586d6e8d",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +1125,57 @@
             "keywords": [
                 "routing"
             ],
-            "time": "2017-01-20 23:05:26"
+            "time": "2017-02-05 07:26:24"
+        },
+        {
+            "name": "icanboogie/service",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ICanBoogie/Service.git",
+                "reference": "67b51890f19c5d687f6a9fc28cbee0e26696f385"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/Service/zipball/67b51890f19c5d687f6a9fc28cbee0e26696f385",
+                "reference": "67b51890f19c5d687f6a9fc28cbee0e26696f385",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ICanBoogie\\Service\\": "lib/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "https://olvlvl.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A dependency-injection container agnostic service provider",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "dependency",
+                "injection",
+                "provider"
+            ],
+            "time": "2017-02-07 20:00:31"
         },
         {
             "name": "icanboogie/session",
@@ -1152,6 +1363,229 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "2ffa7b84d647b8be1788d46b44e438cb3d62056c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/2ffa7b84d647b8be1788d46b44e438cb3d62056c",
+                "reference": "2ffa7b84d647b8be1788d46b44e438cb3d62056c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/filesystem": "~2.8|~3.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "~3.0"
+            },
+            "suggest": {
+                "symfony/yaml": "To use the yaml reference dumper"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Config\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-02-06T12:04:21+00:00"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "v3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "388d368887f128ff3e47654718e29c5011601dce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/388d368887f128ff3e47654718e29c5011601dce",
+                "reference": "388d368887f128ff3e47654718e29c5011601dce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "conflict": {
+                "symfony/yaml": "<3.2"
+            },
+            "require-dev": {
+                "symfony/config": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/yaml": "~3.2"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-01-28T02:37:08+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
+                "reference": "a0c6ef2dc78d33b58d91d3a49f49797a184d06f4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-01-08T20:47:33+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "e1718c6bf57e1efbb8793ada951584b2ab27775b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e1718c6bf57e1efbb8793ada951584b2ab27775b",
+                "reference": "e1718c6bf57e1efbb8793ada951584b2ab27775b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-01-21T17:06:35+00:00"
         }
     ],
     "packages-dev": [],
@@ -1165,6 +1599,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "icanboogie/bind-message-bus": 20,
+        "icanboogie/bind-symfony-dependency-injection": 20,
         "icanboogie/render-engine-markdown": 20
     },
     "prefer-stable": true,
