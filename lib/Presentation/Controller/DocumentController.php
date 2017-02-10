@@ -32,10 +32,12 @@ class DocumentController extends Controller
 
 	/**
 	 * @param string $version
+	 *
+	 * @return \ICanBoogie\HTTP\RedirectResponse
 	 */
 	protected function action_get_version_index($version)
 	{
-		$this->action_get_show($version, 'installation');
+		return $this->redirect("/docs/$version/installation");
 	}
 
 	/**
