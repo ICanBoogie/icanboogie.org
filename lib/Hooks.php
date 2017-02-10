@@ -14,6 +14,7 @@ namespace App;
 use ICanBoogie\Render\EngineCollection;
 use ICanBoogie\Render\MarkdownEngine;
 use ICanBoogie\Routing\RouteDispatcher;
+use ICanBoogie\View\View;
 
 class Hooks
 {
@@ -42,6 +43,24 @@ class Hooks
 	static public function on_alter_engine_collection(EngineCollection\AlterEvent $event, EngineCollection $target)
 	{
 		$target['.md'] = MarkdownEngine::class;
+	}
+
+	/**
+	 * Add the `page_id` variable to the view, created from the route's id.
+	 *
+	 * @param View\AlterEvent $event
+	 * @param View $target
+	 */
+	static public function on_view_alter(View\AlterEvent $event, View $target)
+	{
+		try
+		{
+			$target['page_id'] = \ICanBoogie\normalize($target->controller->route->id);
+		}
+		catch (\Exception $e)
+		{
+			//
+		}
 	}
 
 	/**

@@ -12,7 +12,7 @@ namespace ICanBoogie;
 ?><!DOCTYPE html>
 <html lang="en">
 <?= $view->partial('head', $__VARIABLES__) ?>
-<body>
+<body class="<?= empty($page_id) ? '' : "page--$page_id" ?>">
 
 <?= $view->partial('navigation') ?>
 <?= $content ?>
