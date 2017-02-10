@@ -1,7 +1,7 @@
 services:
 
   handler.document.show:
-    class: "App\\Application\\Handler\\ShowDocumentHandler"
+    class: "App\\Domain\\Document\\Handler\\ShowDocumentHandler"
     arguments:
       - "@template_engines"
       - "https://github.com/ICanBoogie/docs/blob/{version}/{slug}.md"

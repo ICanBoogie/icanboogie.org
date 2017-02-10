@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Application\Handler;
+namespace App\Domain\Document\Handler;
 
 use App\Application\Message\ShowDocumentMessage;
 use App\Domain\Document\DocumentNotFound;
