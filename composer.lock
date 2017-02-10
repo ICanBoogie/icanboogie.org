@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9878993ddb2967a5f5fe6ba41474ca6f",
+    "content-hash": "504a58bd0f5ba06ffe239f480f4cae86",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -702,12 +702,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/HTTP.git",
-                "reference": "b0509e065943ee65f0283c5a0eb8ec79633d9643"
+                "reference": "62b076b40390f8becb97d0192faff34dcdd90ce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/HTTP/zipball/b0509e065943ee65f0283c5a0eb8ec79633d9643",
-                "reference": "b0509e065943ee65f0283c5a0eb8ec79633d9643",
+                "url": "https://api.github.com/repos/ICanBoogie/HTTP/zipball/62b076b40390f8becb97d0192faff34dcdd90ce0",
+                "reference": "62b076b40390f8becb97d0192faff34dcdd90ce0",
                 "shasum": ""
             },
             "require": {
@@ -751,7 +751,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-11-06 19:44:15"
+            "time": "2017-02-10 21:58:44"
         },
         {
             "name": "icanboogie/icanboogie",

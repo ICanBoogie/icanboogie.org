@@ -48,16 +48,15 @@ class ShowDocumentHandler
 	{
 		$version = $message->version;
 		$slug = $message->slug;
-		$content = $this->render_document($version, $slug);
+		$filename = $this->resolve_filename($version, $slug);
+		$content = $this->render_document($filename);
+		$last_modified = filectime($filename);
+		$hash = sha1_file($filename);
+		$sidebar = $this->render_navigation($version);
+		$edit_link = $this->render_edit_link($version, $slug);
+		$page_title = $this->resolve_page_title($content);
 
-		return [
-
-			'content' => $content,
-			'sidebar' => $this->render_navigation($version),
-			'edit_link' => $this->render_edit_link($version, $slug),
-			'page_title' => $this->resolve_page_title($content)
-
-		];
+		return compact('content', 'sidebar', 'edit_link', 'page_title', 'last_modified', 'hash');
 	}
 
 	/**
@@ -68,7 +67,7 @@ class ShowDocumentHandler
 	 *
 	 * @throws DocumentNotFound if the document doesn't exists
 	 */
-	private function render_document($version, $name)
+	private function resolve_filename($version, $name)
 	{
 		$filename = APP_ROOT . "_content/docs/$version/$name.md";
 
@@ -77,6 +76,16 @@ class ShowDocumentHandler
 			throw new DocumentNotFound($version, $name);
 		}
 
+		return $filename;
+	}
+
+	/**
+	 * @param string $filename
+	 *
+	 * @return string
+	 */
+	private function render_document($filename)
+	{
 		$html = $this->render_template($filename);
 		// adjust relative links
 		$html = preg_replace('#"\./([^\.]+)\.md"#', '"./$1"', $html);

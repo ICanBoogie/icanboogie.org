@@ -49,8 +49,10 @@ class DocumentController extends Controller
 		$message = new ShowDocument($version, $slug);
 		$vars = $this->dispatch_message($message);
 
-		$this->response->cache_control = 'public';
 		$this->response->expires = '+1 days';
+		$this->response->etag = $vars['hash'];
+		$this->response->last_modified = $vars['last_modified'];
+
 		$this->view->assign($vars);
 	}
 }
