@@ -11,7 +11,7 @@
 
 namespace App\Presentation\Controller;
 
-use App\Application\Message\ShowDocumentMessage;
+use App\Application\Message\Document\ShowDocument;
 use ICanBoogie\Binding\MessageBus\ControllerBindings as MessageBusBindings;
 use ICanBoogie\Routing\Controller;
 use ICanBoogie\View\ControllerBindings as ViewBindings;
@@ -46,7 +46,7 @@ class DocumentController extends Controller
 	 */
 	protected function action_get_show($version, $slug)
 	{
-		$message = new ShowDocumentMessage($version, $slug);
+		$message = new ShowDocument($version, $slug);
 		$vars = $this->dispatch_message($message);
 
 		$this->response->cache_control = 'public';

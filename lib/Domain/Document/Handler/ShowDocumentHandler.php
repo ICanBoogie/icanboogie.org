@@ -11,7 +11,7 @@
 
 namespace App\Domain\Document\Handler;
 
-use App\Application\Message\ShowDocumentMessage;
+use App\Application\Message\Document\ShowDocument;
 use App\Domain\Document\DocumentNotFound;
 use ICanBoogie\Render\EngineCollection;
 use const ICanBoogie\APP_ROOT;
@@ -40,11 +40,11 @@ class ShowDocumentHandler
 	}
 
 	/**
-	 * @param ShowDocumentMessage $message
+	 * @param ShowDocument $message
 	 *
 	 * @return array
 	 */
-	public function __invoke(ShowDocumentMessage $message)
+	public function __invoke(ShowDocument $message)
 	{
 		$version = $message->version;
 		$slug = $message->slug;

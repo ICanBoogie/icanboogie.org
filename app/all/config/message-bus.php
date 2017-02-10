@@ -18,7 +18,7 @@ return [
 
 	MessageBusConfig::HANDLERS => [
 
-		ShowDocumentMessage::class => ref('handler.document.show')
+		Document\ShowDocument::class => ref('handler.document.show')
 
 	]
 

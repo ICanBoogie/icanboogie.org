@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Application\Message;
+namespace App\Application\Message\Document;
 
 use ICanBoogie\MessageBus\Message;
 
-class ShowDocumentMessage implements Message
+class ShowDocument implements Message
 {
 	/**
 	 * @var string
