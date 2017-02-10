@@ -45,6 +45,14 @@ return [
 		Route::CONTROLLER => Controller\DocumentController::class,
 		Route::ACTION => 'show'
 
+	],
+
+	'api:index' => [
+
+		Route::PATTERN => '/api',
+		Route::CONTROLLER => Controller\ApiController::class,
+		Route::ACTION => 'index'
+
 	]
 
 ];

@@ -1,0 +1,17 @@
+<h1>API Reference</h1>
+
+<ul class="packages"><?php
+
+	foreach ($this as $package => $info)
+	{
+		?><li class="package"><a href="/api/<?= $package ?>/master/"><?= $info['name'] ?></a><ul class="package-versions"><?php
+
+		foreach ($info['versions'] as $version)
+		{
+			?><li class="package-version"><a href="/api/<?= $package ?>/<?= $version ?>/"><?= $version ?></a></li><?php
+		}
+
+		?></ul></li><?php
+	}
+
+?></ul>

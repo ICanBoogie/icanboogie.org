@@ -143,36 +143,36 @@ article blockquote:not(:hover) {
 	opacity: .6;
 }
 
-article h1,
-article h2,
-article h3,
-article h4 {
+h1,
+h2,
+h3,
+h4 {
 	position: relative;
 	font-weight: 300;
 	margin-top: 1.6666rem;
 	margin-bottom: .8333rem;
 }
 
-article h1 + h2,
-article h2 + h3,
-article h3 + h4 {
+h1 + h2,
+h2 + h3,
+h3 + h4 {
 	margin-top: 0;
 }
 
-article h1 {
+h1 {
 	font-size: 2.5rem;
 	margin-top: 0;
 }
 
-article h2 {
+h2 {
 	font-size: 2rem;
 }
 
-article h3 {
+h3 {
 	font-size: 1.5rem;
 }
 
-article h4 {
+h4 {
 	font-size: 1rem;
 	font-weight: 400;
 }
@@ -313,4 +313,44 @@ article table td {
 	padding-top: .8333rem;
 	text-align: right;
 	font-size: .85em;
+}
+
+body.page--api-index .navbar-brand {
+	float: left;
+	position: static;
+}
+
+body.page--api-index h1 {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+body.page--api-index .packages {
+	display: block;
+	list-style: none;
+	margin: 15px 30px;
+	padding: 0;
+	text-align: center;
+}
+
+.packages a:not(:hover) {
+	color: inherit;
+}
+
+.package {
+	display: block;
+	margin-bottom: 1rem;
+	width: 33%;
+	float: left;
+}
+
+.package-versions {
+	padding-left: 0;
+	opacity: .6;
+}
+
+.package-version {
+	display: inline-block;
+	padding-left: 1ex;
 }

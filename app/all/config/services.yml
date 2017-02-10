@@ -1,7 +1,15 @@
+parameters:
+  app_root: !php/const:ICanBoogie\APP_ROOT
+
 services:
 
+  handler.api.list:
+    class: App\Domain\Api\Handler\ListApiHandler
+    arguments:
+      - "%app_root%/web/api"
+
   handler.document.show:
-    class: "App\\Domain\\Document\\Handler\\ShowDocumentHandler"
+    class: App\Domain\Document\Handler\ShowDocumentHandler
     arguments:
       - "@template_engines"
       - "https://github.com/ICanBoogie/docs/blob/{version}/{slug}.md"

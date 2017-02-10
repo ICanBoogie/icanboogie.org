@@ -18,7 +18,8 @@ return [
 
 	MessageBusConfig::HANDLERS => [
 
-		Document\ShowDocument::class => ref('handler.document.show')
+		Api\ListApi::class           => ref('handler.api.list'),
+		Document\ShowDocument::class => ref('handler.document.show'),
 
 	]
 
