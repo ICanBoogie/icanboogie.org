@@ -20,7 +20,7 @@ if (PHP_SAPI === 'cli-server')
 {
 	$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-	if ($uri !== '/' && file_exists(__DIR__ . $uri))
+	if (is_file(__DIR__ . $uri) || file_exists(__DIR__ . "$uri/index.html"))
 	{
 		return false;
 	}
