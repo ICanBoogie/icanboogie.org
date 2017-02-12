@@ -11,9 +11,7 @@
 
 namespace App\Application\Message\Api;
 
-use ICanBoogie\MessageBus\Message;
-
-class ListApi implements Message
+class ListApi
 {
 
 }

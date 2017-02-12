@@ -11,9 +11,7 @@
 
 namespace App\Application\Message\Document;
 
-use ICanBoogie\MessageBus\Message;
-
-class ShowDocument implements Message
+class ShowDocument
 {
 	/**
 	 * @var string
