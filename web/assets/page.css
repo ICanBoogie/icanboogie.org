@@ -3,7 +3,7 @@
 html, body {
 	background-color: #fff;
 	color: #323537;
-	font-family: Roboto Slab, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Roboto Slab, -apple-system, Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 1.6667;
@@ -186,9 +186,9 @@ h4 {
 article pre {
 	overflow: auto;
 	padding: .5rem;
-	margin: .8333rem calc(-.5rem - 1px);
+	margin: .8333rem 0;
 	background-color: #fafafa;
-	border: 1px solid rgba(0,0,0,.07);
+	border: 1px solid #ededed;
 }
 
 article code,
@@ -218,7 +218,12 @@ article table tbody {
 
 article table td {
 	padding: .2rem .4rem;
-	border-top: 1px solid rgba(0,0,0,.07);
+	border-top: 1px solid #ededed;
+	vertical-align: top;
+}
+
+article table tr:last-child td {
+	border-bottom: 1px solid #ededed;
 }
 
 #assets {
@@ -237,18 +242,21 @@ article table td {
 }
 
 .navbar-brand {
-	padding: 15px 30px;
-	width: 200px;
-	border-right: 1px solid rgba(0,0,0,.07);
+	width: 260px;
+	border-right: 1px solid #ededed;
 	position: fixed;
-	border-bottom: 1px solid rgba(0,0,0,.07);
+	border-bottom: 1px solid #ededed;
+	box-sizing: border-box;
 }
 
 .navbar-nav {
-	padding: 15px 30px;
-	border-bottom: 1px solid rgba(0,0,0,.07);
-	margin: 0 0 0 261px;
+	border-bottom: 1px solid #ededed;
+	margin: 0 0 0 260px;
 	display: flex;
+}
+
+.navbar-brand, .navbar-nav {
+	padding: 10px 20px;
 }
 
 .nav-item {
@@ -257,25 +265,40 @@ article table td {
 	text-align: center;
 }
 
-.docs-wrapper {
-	overflow: hidden;
+.nav-item.trail .nav-link:not(:hover) {
+	color: inherit;
 }
 
 .sidebar {
 	font-size: .85rem;
-	width: 200px;
+	width: 260px;
+	min-width: 260px;
 	padding: 0 30px;
-	opacity: .6;
-	transition: opacity 240ms;
 	background: #fafafa;
-	border-right: 1px solid rgba(0,0,0,.07);
+	border-right: 1px solid #ededed;
+	border-top: 1px solid #ededed;
 	position: fixed;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 51px);
 	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: -1px;
+	outline: none;
+	box-sizing: border-box;
+}
+
+/* forced style to compute overflowing */
+.sidebar.computing {
+	width: 200px !important;
+	overflow-x: hidden !important;
 }
 
 .sidebar:hover {
-	opacity: 1;
+	width: auto;
+	z-index: 1;
+}
+
+.sidebar.overflowing:hover {
+	box-shadow: 10px 20px 20px rgba(0,0,0,.1);
 }
 
 .sidebar + .page-inner {
@@ -309,7 +332,7 @@ article table td {
 
 .article-actions {
 	margin-top: 2.5rem;
-	border-top: 1px solid rgba(0,0,0,.07);
+	border-top: 1px solid #ededed;
 	padding-top: .8333rem;
 	text-align: right;
 	font-size: .85em;

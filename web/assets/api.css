@@ -1,0 +1,11 @@
+.navbar-brand, .navbar-nav {
+	background: white;
+}
+
+.search-query {
+	font-weight: inherit;
+}
+
+.summary td > p {
+	margin: 0;
+}
