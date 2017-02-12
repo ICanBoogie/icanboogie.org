@@ -10,18 +10,16 @@ namespace ICanBoogie;
 
 ?>
 
-<div class="docs-wrapper container">
-	<section class="sidebar">
-		<?= $sidebar ?>
-	</section>
+<aside class="sidebar">
+	<?= $sidebar ?>
+</aside>
 
-	<section class="page-inner">
-		<article>
-			<?= $content ?>
-		</article>
+<section class="page-inner">
+	<article>
+		<?= $content ?>
+	</article>
 
-		<footer class="article-actions">
-			<a class="action-edit" href="<?= escape($edit_link) ?>">Edit this page</a>
-		</footer>
-	</section>
-</div>
+	<footer class="article-actions">
+		<a class="action-edit" href="<?= escape($edit_link) ?>">Edit this page</a>
+	</footer>
+</section>
