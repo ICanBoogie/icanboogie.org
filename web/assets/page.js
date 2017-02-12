@@ -31,6 +31,13 @@
 
 } (Element.prototype)
 
+if (!String.prototype.startsWith) {
+	String.prototype.startsWith = function(searchString, position){
+		position = position || 0;
+		return this.substr(position, searchString.length) === searchString;
+	};
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
 	"use strict"
@@ -38,6 +45,20 @@ document.addEventListener("DOMContentLoaded", function() {
 	function forEach(nodeList, callback)
 	{
 		Array.prototype.forEach.call(nodeList, callback)
+	}
+
+	function adjustNavigationTrail()
+	{
+		var pathname = location.pathname + '/'
+		var links = document.body.querySelectorAll('.nav-link')
+
+		forEach(links, function (link) {
+
+			var linkPathname = link.pathname.replace(/\/index.html$/, '')
+			var method = pathname.startsWith(linkPathname) ? 'add' :  'remove'
+
+			link.closest('li').classList[method]('trail')
+		})
 	}
 
 	function indexAssets()
@@ -116,12 +137,39 @@ document.addEventListener("DOMContentLoaded", function() {
 		catch (e) {}
 	}
 
+	function adjustSidebarOverflowing() {
+		var sidebar = document.body.querySelector('.sidebar')
+
+		if (!sidebar)
+		{
+			return
+		}
+
+		sidebar.classList.add('computing')
+
+		var menu = sidebar.querySelector('ul')
+		var max = 0
+
+		forEach(menu.querySelectorAll('*'), function (el) {
+
+			max = Math.max(max, el.scrollWidth)
+
+		})
+
+		var method = max > menu.clientWidth ? 'add' : 'remove'
+
+		sidebar.classList[method]('overflowing')
+		sidebar.classList.remove('computing')
+	}
+
 	function ready()
 	{
 		highlight()
 		attachAnchors(assets['icon-anchor'])
 		adjustOutgoingLinks()
 		adjustSidebarActiveLink()
+		adjustSidebarOverflowing()
+		adjustNavigationTrail()
 	}
 
 	ready()
@@ -133,6 +181,26 @@ document.addEventListener("DOMContentLoaded", function() {
 	!function() {
 
 		var pushed = false
+
+		function replace(selector, fragment)
+		{
+			var element = fragment.querySelector(selector)
+
+			if (!element)
+			{
+				throw new Error("Unable to find element in fragment with: " + selector)
+			}
+
+			var target = document.body.querySelector(selector)
+
+			if (!target)
+			{
+				throw new Error("Unable to target element with " + selector)
+			}
+
+			target.parentNode.insertBefore(element, target)
+			target.parentNode.removeChild(target)
+		}
 
 		function changeDocument(href, then)
 		{
@@ -158,17 +226,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				var temp = document.createElement('div')
 				temp.innerHTML = html
 
-				var inner = temp.querySelector('.page-inner')
-
-				if (!inner) {
-					return
-				}
-
-				var replace = document.querySelector('.page-inner')
+				replace('.page-inner', temp)
+				replace('.sidebar ul', temp)
 
 				window.scrollTo(0, 0);
-				replace.parentNode.appendChild(inner)
-				replace.parentNode.removeChild(replace)
 
 				if (then)
 				{
