@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				replace('.page-inner', temp)
 				replace('.sidebar ul', temp)
 
+				document.body.classList.remove('show-sidebar')
 				window.scrollTo(0, 0);
 
 				if (then)
@@ -273,6 +274,19 @@ document.addEventListener("DOMContentLoaded", function() {
 				history.pushState({ href: href }, '', href)
 
 			})
+
+		})
+
+	} ()
+
+	/**
+	 * Sidebar toggler
+	 */
+	!function () {
+
+		document.body.addDelegatedEventListener('.sidebar-toggle', 'click', function (ev, anchor) {
+
+			document.body.classList.toggle('show-sidebar')
 
 		})
 
