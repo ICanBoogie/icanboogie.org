@@ -22,7 +22,7 @@
 		"icanboogie/bind-view": "^0.9",
 		"icanboogie/bind-message-bus": "dev-master",
 		"icanboogie/bind-symfony-dependency-injection": "dev-master",
-		"icanboogie/render-engine-markdown": "dev-feature-extra as 0.2"
+		"icanboogie/render-engine-markdown": "^0.2"
 	},
 	"autoload": {
 		"psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "504a58bd0f5ba06ffe239f480f4cae86",
+    "content-hash": "fd70f0f2a751ff2feec3b66505e187c8",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -306,12 +306,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/bind-render.git",
-                "reference": "da9f54eb7c960cb5736db85c598282ad89d9e937"
+                "reference": "56029adb29fbea44f7fe598257ee82ea4b164bf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/bind-render/zipball/da9f54eb7c960cb5736db85c598282ad89d9e937",
-                "reference": "da9f54eb7c960cb5736db85c598282ad89d9e937",
+                "url": "https://api.github.com/repos/ICanBoogie/bind-render/zipball/56029adb29fbea44f7fe598257ee82ea4b164bf7",
+                "reference": "56029adb29fbea44f7fe598257ee82ea4b164bf7",
                 "shasum": ""
             },
             "require": {
@@ -319,13 +319,13 @@
                 "icanboogie/render": "^0.6",
                 "php": ">=5.6"
             },
-            "require-dev": {
-                "psr/log": "1.0.0"
-            },
             "type": "library",
             "extra": {
                 "icanboogie": {
-                    "config-path": "config"
+                    "config-path": "config",
+                    "config-constructor": {
+                        "render_engines": "ICanBoogie\\Binding\\Render\\RenderConfig::synthesise_engines#render"
+                    }
                 }
             },
             "autoload": {
@@ -347,7 +347,7 @@
             ],
             "description": "Binds icanboogie/render to ICanBoogie",
             "homepage": "https://icanboogie.org/",
-            "time": "2016-11-13 01:10:34"
+            "time": "2017-02-13 20:00:24"
         },
         {
             "name": "icanboogie/bind-routing",
@@ -992,12 +992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/Render.git",
-                "reference": "4da698e1af0afacf0a7e50dceef4f909f0cdc8b1"
+                "reference": "d438e83e924ddce68fad99cd3996eadbcfcfb7d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/Render/zipball/4da698e1af0afacf0a7e50dceef4f909f0cdc8b1",
-                "reference": "4da698e1af0afacf0a7e50dceef4f909f0cdc8b1",
+                "url": "https://api.github.com/repos/ICanBoogie/Render/zipball/d438e83e924ddce68fad99cd3996eadbcfcfb7d8",
+                "reference": "d438e83e924ddce68fad99cd3996eadbcfcfb7d8",
                 "shasum": ""
             },
             "require": {
@@ -1031,20 +1031,20 @@
                 "decorate",
                 "render"
             ],
-            "time": "2016-11-06 17:10:31"
+            "time": "2017-02-13 18:20:48"
         },
         {
             "name": "icanboogie/render-engine-markdown",
-            "version": "dev-feature-extra",
+            "version": "0.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICanBoogie/render-engine-markdown.git",
-                "reference": "47fbb8af8b55474f5fc4ea30de15d4e2ec604866"
+                "reference": "f8e49da8cb929c656d994883264312db3ff952cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICanBoogie/render-engine-markdown/zipball/47fbb8af8b55474f5fc4ea30de15d4e2ec604866",
-                "reference": "47fbb8af8b55474f5fc4ea30de15d4e2ec604866",
+                "url": "https://api.github.com/repos/ICanBoogie/render-engine-markdown/zipball/f8e49da8cb929c656d994883264312db3ff952cd",
+                "reference": "f8e49da8cb929c656d994883264312db3ff952cd",
                 "shasum": ""
             },
             "require": {
@@ -1052,7 +1052,15 @@
                 "icanboogie/render": "^0.6",
                 "php": ">=5.6"
             },
+            "require-dev": {
+                "icanboogie/bind-render": "^0.6"
+            },
             "type": "library",
+            "extra": {
+                "icanboogie": {
+                    "config-path": "config"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "ICanBoogie\\Render\\": "lib/"
@@ -1076,7 +1084,7 @@
                 "markdown",
                 "render"
             ],
-            "time": "2016-11-13 10:38:47"
+            "time": "2017-02-13 19:52:37"
         },
         {
             "name": "icanboogie/routing",
@@ -1590,19 +1598,11 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "alias": "0.2",
-            "alias_normalized": "0.2.0.0",
-            "version": "dev-feature-extra",
-            "package": "icanboogie/render-engine-markdown"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "icanboogie/bind-message-bus": 20,
-        "icanboogie/bind-symfony-dependency-injection": 20,
-        "icanboogie/render-engine-markdown": 20
+        "icanboogie/bind-symfony-dependency-injection": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

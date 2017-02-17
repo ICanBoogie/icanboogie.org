@@ -11,8 +11,6 @@
 
 namespace App;
 
-use ICanBoogie\Render\EngineCollection;
-use ICanBoogie\Render\MarkdownEngine;
 use ICanBoogie\Routing\RouteDispatcher;
 use ICanBoogie\View\View;
 
@@ -32,17 +30,6 @@ class Hooks
 		}
 
 		$response->body = self::render_stats() . $response->body;
-	}
-
-	/**
-	 * Add Markdown to the engine collection.
-	 *
-	 * @param EngineCollection\AlterEvent $event
-	 * @param EngineCollection $target
-	 */
-	static public function on_alter_engine_collection(EngineCollection\AlterEvent $event, EngineCollection $target)
-	{
-		$target['.md'] = MarkdownEngine::class;
 	}
 
 	/**
